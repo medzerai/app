@@ -21,6 +21,137 @@ const translations = {
       watchDemo: 'Watch Demo',
       liveDashboard: 'Live Dashboard'
     },
+    features: {
+      title: 'Advanced Monitoring Features',
+      subtitle: 'Comprehensive monitoring solutions designed to maximize your solar panel efficiency and robot performance.',
+      realTime: {
+        title: 'Real-Time Monitoring',
+        description: 'Track every robot\'s location, status, and cleaning progress in real-time through our advanced dashboard.'
+      },
+      analytics: {
+        title: 'Performance Analytics',
+        description: 'Detailed insights on cleaning efficiency, energy output improvements, and cost savings with comprehensive reporting.'
+      },
+      maintenance: {
+        title: 'Predictive Maintenance',
+        description: 'AI-powered alerts notify you before issues arise, preventing costly downtime and maximizing robot uptime.'
+      },
+      remote: {
+        title: 'Remote Control',
+        description: 'Control and schedule your entire robot fleet from anywhere using our mobile app or web dashboard.'
+      },
+      weather: {
+        title: 'Weather Integration',
+        description: 'Smart scheduling based on weather conditions to optimize cleaning cycles and protect your equipment.'
+      },
+      roi: {
+        title: 'ROI Calculator',
+        description: 'Track your return on investment with detailed cost analysis and efficiency improvement metrics.'
+      }
+    },
+    technology: {
+      title: 'Cutting-Edge Technology',
+      subtitle: 'Our monitoring system uses advanced IoT sensors, AI-powered analytics, and machine learning to provide unparalleled insights into your solar panel cleaning operations.',
+      feature1: 'AI-Powered Predictive Analytics',
+      feature2: 'Real-Time IoT Sensor Integration',
+      feature3: 'Cloud-Based Monitoring Platform'
+    },
+    benefits: {
+      title: 'Maximize Your Solar Investment',
+      subtitle: 'Our monitoring system delivers measurable results that directly impact your bottom line.',
+      efficiency: 'Average Efficiency Increase',
+      savings: 'Annual Cost Savings',
+      uptime: 'System Uptime',
+      monitoring: 'Continuous Monitoring'
+    },
+    testimonials: {
+      title: 'Trusted by Industry Leaders',
+      sarah: {
+        name: 'Sarah Mitchell',
+        position: 'Solar Farm Manager',
+        company: 'GreenTech Energy',
+        quote: 'Our solar panel efficiency increased by 28% after implementing this monitoring system. The real-time insights are invaluable.'
+      },
+      david: {
+        name: 'David Chen',
+        position: 'Operations Director',
+        company: 'SolarMax Solutions',
+        quote: 'The predictive maintenance feature saved us over $50,000 in potential repairs. Best investment we\'ve made.'
+      }
+    },
+    pricing: {
+      title: 'Choose Your Plan',
+      subtitle: 'Flexible pricing options to fit your solar operation scale and requirements.',
+      basic: {
+        name: 'Basic Monitoring',
+        price: '$299',
+        period: '/month',
+        features: [
+          'Real-time robot tracking',
+          'Basic performance metrics',
+          'Email notifications',
+          'Mobile app access',
+          'Standard support'
+        ]
+      },
+      professional: {
+        name: 'Professional Analytics',
+        price: '$599',
+        period: '/month',
+        popular: 'Most Popular',
+        features: [
+          'Everything in Basic',
+          'Advanced analytics dashboard',
+          'Predictive maintenance alerts',
+          'Weather integration',
+          'Custom reporting',
+          'Priority support'
+        ]
+      },
+      enterprise: {
+        name: 'Enterprise Solution',
+        price: 'Custom',
+        period: '',
+        features: [
+          'Everything in Professional',
+          'Unlimited robots',
+          'API access',
+          'Custom integrations',
+          'Dedicated account manager',
+          '24/7 support'
+        ]
+      },
+      getStarted: 'Get Started'
+    },
+    contact: {
+      title: 'Ready to Optimize Your Solar Farm?',
+      subtitle: 'Join hundreds of solar operators who are maximizing their efficiency with our monitoring platform.',
+      name: 'Your Name',
+      email: 'Email Address',
+      company: 'Company Name',
+      panels: 'Number of Solar Panels',
+      message: 'Tell us about your solar operation...',
+      schedule: 'Schedule Free Consultation'
+    },
+    footer: {
+      description: 'Advanced monitoring solutions for solar panel cleaning robots.',
+      product: 'Product',
+      features: 'Features',
+      pricing: 'Pricing',
+      api: 'API',
+      integrations: 'Integrations',
+      company: 'Company',
+      about: 'About',
+      blog: 'Blog',
+      careers: 'Careers',
+      contact: 'Contact',
+      support: 'Support',
+      documentation: 'Documentation',
+      helpCenter: 'Help Center',
+      community: 'Community',
+      status: 'Status',
+      copyright: '© 2025 SolarBot Monitor. All rights reserved.'
+    },
     dashboard: {
       title: 'Robot Control Dashboard',
       subtitle: 'Monitor and control your solar panel cleaning robots in real-time',
@@ -37,7 +168,10 @@ const translations = {
       inactive: 'Inactive',
       cleaning: 'Cleaning',
       charging: 'Charging',
-      maintenance: 'Maintenance'
+      maintenance: 'Maintenance',
+      turnOn: 'Turn On',
+      turnOff: 'Turn Off',
+      solarFarmLayout: 'Solar Farm Layout'
     }
   },
   ar: {
@@ -58,6 +192,137 @@ const translations = {
       watchDemo: 'شاهد العرض التوضيحي',
       liveDashboard: 'لوحة التحكم المباشرة'
     },
+    features: {
+      title: 'مميزات المراقبة المتقدمة',
+      subtitle: 'حلول مراقبة شاملة مصممة لزيادة كفاءة الألواح الشمسية وأداء الروبوتات إلى أقصى حد.',
+      realTime: {
+        title: 'المراقبة في الوقت الفعلي',
+        description: 'تتبع موقع كل روبوت وحالته وتقدم التنظيف في الوقت الفعلي من خلال لوحة التحكم المتقدمة.'
+      },
+      analytics: {
+        title: 'تحليل الأداء',
+        description: 'رؤى مفصلة حول كفاءة التنظيف وتحسينات إنتاج الطاقة وتوفير التكاليف مع تقارير شاملة.'
+      },
+      maintenance: {
+        title: 'الصيانة التنبؤية',
+        description: 'تنبيهات مدعومة بالذكاء الاصطناعي تخطرك قبل حدوث المشاكل، مما يمنع التوقف المكلف ويزيد وقت تشغيل الروبوت.'
+      },
+      remote: {
+        title: 'التحكم عن بُعد',
+        description: 'تحكم في أسطول الروبوتات بالكامل وجدولة العمل من أي مكان باستخدام تطبيق الهاتف المحمول أو لوحة تحكم الويب.'
+      },
+      weather: {
+        title: 'تكامل الطقس',
+        description: 'جدولة ذكية تعتمد على ظروف الطقس لتحسين دورات التنظيف وحماية معداتك.'
+      },
+      roi: {
+        title: 'حاسبة العائد على الاستثمار',
+        description: 'تتبع عائد الاستثمار مع تحليل مفصل للتكلفة ومقاييس تحسين الكفاءة.'
+      }
+    },
+    technology: {
+      title: 'تكنولوجيا متطورة',
+      subtitle: 'يستخدم نظام المراقبة لدينا أجهزة استشعار إنترنت الأشياء المتقدمة والتحليلات المدعومة بالذكاء الاصطناعي والتعلم الآلي لتوفير رؤى لا مثيل لها في عمليات تنظيف الألواح الشمسية.',
+      feature1: 'تحليلات تنبؤية مدعومة بالذكاء الاصطناعي',
+      feature2: 'تكامل أجهزة استشعار إنترنت الأشياء في الوقت الفعلي',
+      feature3: 'منصة مراقبة سحابية'
+    },
+    benefits: {
+      title: 'اعظّم استثمارك في الطاقة الشمسية',
+      subtitle: 'يقدم نظام المراقبة لدينا نتائج قابلة للقياس تؤثر مباشرة على أرباحك.',
+      efficiency: 'متوسط زيادة الكفاءة',
+      savings: 'توفير التكاليف السنوية',
+      uptime: 'وقت تشغيل النظام',
+      monitoring: 'مراقبة مستمرة'
+    },
+    testimonials: {
+      title: 'موثوق به من قبل قادة الصناعة',
+      sarah: {
+        name: 'سارة ميتشل',
+        position: 'مديرة مزرعة الطاقة الشمسية',
+        company: 'جرين تيك إنرجي',
+        quote: 'زادت كفاءة الألواح الشمسية لدينا بنسبة 28% بعد تطبيق نظام المراقبة هذا. الرؤى في الوقت الفعلي لا تقدر بثمن.'
+      },
+      david: {
+        name: 'ديفيد تشين',
+        position: 'مدير العمليات',
+        company: 'سولار ماكس سوليوشنز',
+        quote: 'وفرت ميزة الصيانة التنبؤية أكثر من 50,000 دولار في الإصلاحات المحتملة. أفضل استثمار قمنا به.'
+      }
+    },
+    pricing: {
+      title: 'اختر خطتك',
+      subtitle: 'خيارات تسعير مرنة تناسب نطاق عمليات الطاقة الشمسية ومتطلباتك.',
+      basic: {
+        name: 'المراقبة الأساسية',
+        price: '299 دولار',
+        period: '/شهر',
+        features: [
+          'تتبع الروبوتات في الوقت الفعلي',
+          'مقاييس الأداء الأساسية',
+          'إشعارات البريد الإلكتروني',
+          'الوصول إلى تطبيق الهاتف المحمول',
+          'دعم قياسي'
+        ]
+      },
+      professional: {
+        name: 'التحليلات المهنية',
+        price: '599 دولار',
+        period: '/شهر',
+        popular: 'الأكثر شعبية',
+        features: [
+          'كل ما في الباقة الأساسية',
+          'لوحة تحكم تحليلات متقدمة',
+          'تنبيهات الصيانة التنبؤية',
+          'تكامل الطقس',
+          'تقارير مخصصة',
+          'دعم ذو أولوية'
+        ]
+      },
+      enterprise: {
+        name: 'حل المؤسسات',
+        price: 'مخصص',
+        period: '',
+        features: [
+          'كل ما في الباقة المهنية',
+          'روبوتات غير محدودة',
+          'الوصول إلى واجهة برمجة التطبيقات',
+          'تكاملات مخصصة',
+          'مدير حساب مخصص',
+          'دعم على مدار الساعة'
+        ]
+      },
+      getStarted: 'ابدأ الآن'
+    },
+    contact: {
+      title: 'هل أنت جاهز لتحسين مزرعة الطاقة الشمسية؟',
+      subtitle: 'انضم إلى مئات من مشغلي الطاقة الشمسية الذين يعظمون كفاءتهم باستخدام منصة المراقبة لدينا.',
+      name: 'اسمك',
+      email: 'عنوان البريد الإلكتروني',
+      company: 'اسم الشركة',
+      panels: 'عدد الألواح الشمسية',
+      message: 'أخبرنا عن عمليات الطاقة الشمسية لديك...',
+      schedule: 'جدولة استشارة مجانية'
+    },
+    footer: {
+      description: 'حلول مراقبة متقدمة لروبوتات تنظيف الألواح الشمسية.',
+      product: 'المنتج',
+      features: 'المميزات',
+      pricing: 'الأسعار',
+      api: 'واجهة برمجة التطبيقات',
+      integrations: 'التكاملات',
+      company: 'الشركة',
+      about: 'حول',
+      blog: 'المدونة',
+      careers: 'الوظائف',
+      contact: 'اتصل بنا',
+      support: 'الدعم',
+      documentation: 'التوثيق',
+      helpCenter: 'مركز المساعدة',
+      community: 'المجتمع',
+      status: 'الحالة',
+      copyright: '© 2025 سولار بوت مونيتر. جميع الحقوق محفوظة.'
+    },
     dashboard: {
       title: 'لوحة تحكم الروبوتات',
       subtitle: 'راقب وتحكم في روبوتات تنظيف الألواح الشمسية في الوقت الفعلي',
@@ -74,7 +339,10 @@ const translations = {
       inactive: 'غير نشط',
       cleaning: 'ينظف',
       charging: 'يشحن',
-      maintenance: 'صيانة'
+      maintenance: 'صيانة',
+      turnOn: 'تشغيل',
+      turnOff: 'إيقاف',
+      solarFarmLayout: 'مخطط مزرعة الطاقة الشمسية'
     }
   }
 };
@@ -104,10 +372,10 @@ const Navigation = () => {
             </div>
             
             <div className={`hidden md:flex space-x-8 ${isRTL ? 'space-x-reverse' : ''}`}>
-              <Link to="/" className="text-white/80 hover:text-white transition-colors">{t.nav.features}</Link>
-              <a href="#benefits" className="text-white/80 hover:text-white transition-colors">{t.nav.benefits}</a>
-              <a href="#pricing" className="text-white/80 hover:text-white transition-colors">{t.nav.pricing}</a>
-              <a href="#contact" className="text-white/80 hover:text-white transition-colors">{t.nav.contact}</a>
+              <Link to="/#features" className="text-white/80 hover:text-white transition-colors">{t.nav.features}</Link>
+              <Link to="/#benefits" className="text-white/80 hover:text-white transition-colors">{t.nav.benefits}</Link>
+              <Link to="/#pricing" className="text-white/80 hover:text-white transition-colors">{t.nav.pricing}</Link>
+              <Link to="/#contact" className="text-white/80 hover:text-white transition-colors">{t.nav.contact}</Link>
               <Link to="/dashboard" className="text-white/80 hover:text-white transition-colors">{t.nav.dashboard}</Link>
             </div>
             
@@ -311,7 +579,7 @@ const Dashboard = () => {
 
         {/* Solar Farm Map */}
         <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 mb-8">
-          <h3 className="text-2xl font-bold text-white mb-4">Solar Farm Layout</h3>
+          <h3 className="text-2xl font-bold text-white mb-4">{t.dashboard.solarFarmLayout}</h3>
           <div className="relative bg-gradient-to-br from-green-900/30 to-blue-900/30 rounded-lg h-96 overflow-hidden">
             {/* Grid overlay */}
             <div className="absolute inset-0 opacity-20">
@@ -427,7 +695,7 @@ const Dashboard = () => {
                     : 'hover:shadow-lg transform hover:scale-105'
                 }`}
               >
-                {robot.isOn ? `Turn Off` : `Turn On`}
+                {robot.isOn ? t.dashboard.turnOff : t.dashboard.turnOn}
               </button>
             </div>
           ))}
@@ -447,100 +715,6 @@ const HomePage = () => {
     { label: 'Efficiency Increase', value: '23.5', unit: '%' },
     { label: 'Cost Savings This Month', value: '$15,420', unit: '' },
     { label: 'Active Robots', value: '12', unit: 'robots' }
-  ];
-
-  const features = [
-    {
-      icon: '📡',
-      title: 'Real-Time Monitoring',
-      description: 'Track every robot\'s location, status, and cleaning progress in real-time through our advanced dashboard.'
-    },
-    {
-      icon: '📊',
-      title: 'Performance Analytics',
-      description: 'Detailed insights on cleaning efficiency, energy output improvements, and cost savings with comprehensive reporting.'
-    },
-    {
-      icon: '🔧',
-      title: 'Predictive Maintenance',
-      description: 'AI-powered alerts notify you before issues arise, preventing costly downtime and maximizing robot uptime.'
-    },
-    {
-      icon: '📱',
-      title: 'Remote Control',
-      description: 'Control and schedule your entire robot fleet from anywhere using our mobile app or web dashboard.'
-    },
-    {
-      icon: '🌤️',
-      title: 'Weather Integration',
-      description: 'Smart scheduling based on weather conditions to optimize cleaning cycles and protect your equipment.'
-    },
-    {
-      icon: '💰',
-      title: 'ROI Calculator',
-      description: 'Track your return on investment with detailed cost analysis and efficiency improvement metrics.'
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: 'Sarah Mitchell',
-      position: 'Solar Farm Manager',
-      company: 'GreenTech Energy',
-      image: 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643',
-      quote: 'Our solar panel efficiency increased by 28% after implementing this monitoring system. The real-time insights are invaluable.'
-    },
-    {
-      name: 'David Chen',
-      position: 'Operations Director',
-      company: 'SolarMax Solutions',
-      image: 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643',
-      quote: 'The predictive maintenance feature saved us over $50,000 in potential repairs. Best investment we\'ve made.'
-    }
-  ];
-
-  const packages = [
-    {
-      name: 'Basic Monitoring',
-      price: '$299',
-      period: '/month',
-      features: [
-        'Real-time robot tracking',
-        'Basic performance metrics',
-        'Email notifications',
-        'Mobile app access',
-        'Standard support'
-      ],
-      highlight: false
-    },
-    {
-      name: 'Professional Analytics',
-      price: '$599',
-      period: '/month',
-      features: [
-        'Everything in Basic',
-        'Advanced analytics dashboard',
-        'Predictive maintenance alerts',
-        'Weather integration',
-        'Custom reporting',
-        'Priority support'
-      ],
-      highlight: true
-    },
-    {
-      name: 'Enterprise Solution',
-      price: 'Custom',
-      period: '',
-      features: [
-        'Everything in Professional',
-        'Unlimited robots',
-        'API access',
-        'Custom integrations',
-        'Dedicated account manager',
-        '24/7 support'
-      ],
-      highlight: false
-    }
   ];
 
   useEffect(() => {
@@ -581,7 +755,7 @@ const HomePage = () => {
             <p className="text-xl text-white/80 mb-8 leading-relaxed">
               {t.hero.subtitle}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className={`flex flex-col sm:flex-row gap-4 justify-center ${isRTL ? 'lg:justify-end' : 'lg:justify-start'}`}>
               <button className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all">
                 {t.hero.startTrial}
               </button>
@@ -625,29 +799,352 @@ const HomePage = () => {
       {/* Features Section */}
       <section id="features" className="py-20 bg-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`text-center mb-16 ${isRTL ? 'text-right' : 'text-left'}`}>
+          <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Advanced Monitoring Features
+              {t.features.title}
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Comprehensive monitoring solutions designed to maximize your solar panel efficiency and robot performance.
+              {t.features.subtitle}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all group">
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{feature.icon}</div>
-                <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                <p className="text-white/80 leading-relaxed">{feature.description}</p>
-              </div>
-            ))}
+            <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all group">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">📡</div>
+              <h3 className="text-xl font-semibold text-white mb-3">{t.features.realTime.title}</h3>
+              <p className="text-white/80 leading-relaxed">{t.features.realTime.description}</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all group">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">📊</div>
+              <h3 className="text-xl font-semibold text-white mb-3">{t.features.analytics.title}</h3>
+              <p className="text-white/80 leading-relaxed">{t.features.analytics.description}</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all group">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">🔧</div>
+              <h3 className="text-xl font-semibold text-white mb-3">{t.features.maintenance.title}</h3>
+              <p className="text-white/80 leading-relaxed">{t.features.maintenance.description}</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all group">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">📱</div>
+              <h3 className="text-xl font-semibold text-white mb-3">{t.features.remote.title}</h3>
+              <p className="text-white/80 leading-relaxed">{t.features.remote.description}</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all group">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">🌤️</div>
+              <h3 className="text-xl font-semibold text-white mb-3">{t.features.weather.title}</h3>
+              <p className="text-white/80 leading-relaxed">{t.features.weather.description}</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all group">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">💰</div>
+              <h3 className="text-xl font-semibold text-white mb-3">{t.features.roi.title}</h3>
+              <p className="text-white/80 leading-relaxed">{t.features.roi.description}</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Other sections would continue here with similar RTL/translation support... */}
-      {/* For brevity, I'll continue with the rest of the sections but they follow the same pattern */}
+      {/* Technology Showcase */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className={`${isRTL ? 'lg:order-2' : ''}`}>
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                {t.technology.title}
+              </h2>
+              <p className="text-xl text-white/80 mb-8 leading-relaxed">
+                {t.technology.subtitle}
+              </p>
+              <div className="space-y-4">
+                <div className={`flex items-center space-x-3 ${isRTL ? 'space-x-reverse' : ''}`}>
+                  <div className="w-6 h-6 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center">
+                    <span className="text-white text-xs">✓</span>
+                  </div>
+                  <span className="text-white">{t.technology.feature1}</span>
+                </div>
+                <div className={`flex items-center space-x-3 ${isRTL ? 'space-x-reverse' : ''}`}>
+                  <div className="w-6 h-6 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center">
+                    <span className="text-white text-xs">✓</span>
+                  </div>
+                  <span className="text-white">{t.technology.feature2}</span>
+                </div>
+                <div className={`flex items-center space-x-3 ${isRTL ? 'space-x-reverse' : ''}`}>
+                  <div className="w-6 h-6 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center">
+                    <span className="text-white text-xs">✓</span>
+                  </div>
+                  <span className="text-white">{t.technology.feature3}</span>
+                </div>
+              </div>
+            </div>
+            <div className={`relative ${isRTL ? 'lg:order-1' : ''}`}>
+              <img 
+                src="https://images.pexels.com/photos/8728559/pexels-photo-8728559.jpeg" 
+                alt="Advanced Monitoring Technology" 
+                className="rounded-2xl w-full h-96 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent rounded-2xl"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section id="benefits" className="py-20 bg-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              {t.benefits.title}
+            </h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              {t.benefits.subtitle}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white text-2xl font-bold">↑</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">35%</h3>
+              <p className="text-white/80">{t.benefits.efficiency}</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-blue-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white text-2xl font-bold">$</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">$50K+</h3>
+              <p className="text-white/80">{t.benefits.savings}</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white text-2xl font-bold">⚡</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">99.8%</h3>
+              <p className="text-white/80">{t.benefits.uptime}</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white text-2xl font-bold">⏱</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">24/7</h3>
+              <p className="text-white/80">{t.benefits.monitoring}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              {t.testimonials.title}
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
+              <div className={`flex items-center mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <img 
+                  src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643" 
+                  alt={t.testimonials.sarah.name}
+                  className={`w-16 h-16 rounded-full object-cover ${isRTL ? 'ml-4' : 'mr-4'}`}
+                />
+                <div className={`${isRTL ? 'text-right' : ''}`}>
+                  <h4 className="text-white font-semibold">{t.testimonials.sarah.name}</h4>
+                  <p className="text-white/60">{t.testimonials.sarah.position}</p>
+                  <p className="text-blue-400">{t.testimonials.sarah.company}</p>
+                </div>
+              </div>
+              <p className="text-white/80 text-lg italic">"{t.testimonials.sarah.quote}"</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
+              <div className={`flex items-center mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <img 
+                  src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643" 
+                  alt={t.testimonials.david.name}
+                  className={`w-16 h-16 rounded-full object-cover ${isRTL ? 'ml-4' : 'mr-4'}`}
+                />
+                <div className={`${isRTL ? 'text-right' : ''}`}>
+                  <h4 className="text-white font-semibold">{t.testimonials.david.name}</h4>
+                  <p className="text-white/60">{t.testimonials.david.position}</p>
+                  <p className="text-blue-400">{t.testimonials.david.company}</p>
+                </div>
+              </div>
+              <p className="text-white/80 text-lg italic">"{t.testimonials.david.quote}"</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="py-20 bg-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              {t.pricing.title}
+            </h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              {t.pricing.subtitle}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Basic Plan */}
+            <div className="rounded-xl p-8 border bg-white/10 border-white/20 transition-all hover:scale-105">
+              <h3 className="text-2xl font-bold text-white mb-2">{t.pricing.basic.name}</h3>
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-white">{t.pricing.basic.price}</span>
+                <span className="text-white/60">{t.pricing.basic.period}</span>
+              </div>
+              <ul className="space-y-3 mb-8">
+                {t.pricing.basic.features.map((feature, index) => (
+                  <li key={index} className={`flex items-center text-white/80 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                    <span className={`text-green-400 ${isRTL ? 'ml-3' : 'mr-3'}`}>✓</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <button className="w-full py-3 rounded-lg font-semibold transition-all border-2 border-white/30 text-white hover:bg-white/10">
+                {t.pricing.getStarted}
+              </button>
+            </div>
+
+            {/* Professional Plan */}
+            <div className="rounded-xl p-8 border bg-gradient-to-b from-blue-500/20 to-cyan-500/20 border-blue-400/50 transition-all hover:scale-105">
+              <div className="bg-gradient-to-r from-blue-400 to-cyan-400 text-white text-sm font-semibold px-3 py-1 rounded-full inline-block mb-4">
+                {t.pricing.professional.popular}
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">{t.pricing.professional.name}</h3>
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-white">{t.pricing.professional.price}</span>
+                <span className="text-white/60">{t.pricing.professional.period}</span>
+              </div>
+              <ul className="space-y-3 mb-8">
+                {t.pricing.professional.features.map((feature, index) => (
+                  <li key={index} className={`flex items-center text-white/80 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                    <span className={`text-green-400 ${isRTL ? 'ml-3' : 'mr-3'}`}>✓</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <button className="w-full py-3 rounded-lg font-semibold transition-all bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:shadow-xl">
+                {t.pricing.getStarted}
+              </button>
+            </div>
+
+            {/* Enterprise Plan */}
+            <div className="rounded-xl p-8 border bg-white/10 border-white/20 transition-all hover:scale-105">
+              <h3 className="text-2xl font-bold text-white mb-2">{t.pricing.enterprise.name}</h3>
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-white">{t.pricing.enterprise.price}</span>
+                <span className="text-white/60">{t.pricing.enterprise.period}</span>
+              </div>
+              <ul className="space-y-3 mb-8">
+                {t.pricing.enterprise.features.map((feature, index) => (
+                  <li key={index} className={`flex items-center text-white/80 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                    <span className={`text-green-400 ${isRTL ? 'ml-3' : 'mr-3'}`}>✓</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <button className="w-full py-3 rounded-lg font-semibold transition-all border-2 border-white/30 text-white hover:bg-white/10">
+                {t.pricing.getStarted}
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section id="contact" className="py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            {t.contact.title}
+          </h2>
+          <p className="text-xl text-white/80 mb-8">
+            {t.contact.subtitle}
+          </p>
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+            <div className="grid md:grid-cols-2 gap-6">
+              <input 
+                type="text" 
+                placeholder={t.contact.name}
+                className="bg-white/10 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/60 focus:outline-none focus:border-blue-400"
+              />
+              <input 
+                type="email" 
+                placeholder={t.contact.email}
+                className="bg-white/10 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/60 focus:outline-none focus:border-blue-400"
+              />
+              <input 
+                type="text" 
+                placeholder={t.contact.company}
+                className="bg-white/10 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/60 focus:outline-none focus:border-blue-400"
+              />
+              <input 
+                type="text" 
+                placeholder={t.contact.panels}
+                className="bg-white/10 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/60 focus:outline-none focus:border-blue-400"
+              />
+            </div>
+            <textarea 
+              placeholder={t.contact.message}
+              rows="4"
+              className="w-full mt-4 bg-white/10 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/60 focus:outline-none focus:border-blue-400"
+            ></textarea>
+            <button className="w-full mt-6 bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-4 rounded-lg text-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all">
+              {t.contact.schedule}
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 bg-black/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className={`flex items-center space-x-2 mb-4 ${isRTL ? 'space-x-reverse' : ''}`}>
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">SP</span>
+                </div>
+                <span className="text-white font-bold text-xl">SolarBot Monitor</span>
+              </div>
+              <p className="text-white/60">{t.footer.description}</p>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">{t.footer.product}</h4>
+              <ul className="space-y-2 text-white/60">
+                <li><a href="#features" className="hover:text-white transition-colors">{t.footer.features}</a></li>
+                <li><a href="#pricing" className="hover:text-white transition-colors">{t.footer.pricing}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t.footer.api}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t.footer.integrations}</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">{t.footer.company}</h4>
+              <ul className="space-y-2 text-white/60">
+                <li><a href="#" className="hover:text-white transition-colors">{t.footer.about}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t.footer.blog}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t.footer.careers}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t.footer.contact}</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">{t.footer.support}</h4>
+              <ul className="space-y-2 text-white/60">
+                <li><a href="#" className="hover:text-white transition-colors">{t.footer.documentation}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t.footer.helpCenter}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t.footer.community}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t.footer.status}</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
+            <p>{t.footer.copyright}</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
