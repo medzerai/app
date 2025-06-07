@@ -351,6 +351,7 @@ const LanguageContext = React.createContext();
 
 const Navigation = () => {
   const [language, setLanguage] = useState('en');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const t = translations[language];
   const isRTL = language === 'ar';
@@ -359,38 +360,139 @@ const Navigation = () => {
     setLanguage(prev => prev === 'en' ? 'ar' : 'en');
   };
 
+  const scrollToSection = (sectionId) => {
+    if (location.pathname !== '/') {
+      // If not on home page, navigate to home first
+      window.location.href = `/#${sectionId}`;
+    } else {
+      // If on home page, scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    setMobileMenuOpen(false);
+  };
+
+  const handleDemoClick = () => {
+    scrollToSection('contact');
+  };
+
   return (
     <LanguageContext.Provider value={{ language, t, isRTL, toggleLanguage }}>
       <nav className={`fixed top-0 w-full z-50 bg-white/10 backdrop-blur-md border-b border-white/20 ${isRTL ? 'rtl' : 'ltr'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`flex justify-between items-center h-16 ${isRTL ? 'flex-row-reverse' : ''}`}>
-            <div className={`flex items-center space-x-2 ${isRTL ? 'space-x-reverse' : ''}`}>
+            {/* Logo */}
+            <Link to="/" className={`flex items-center space-x-2 ${isRTL ? 'space-x-reverse' : ''}`}>
               <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">SP</span>
               </div>
               <span className="text-white font-bold text-xl">SolarBot Monitor</span>
-            </div>
+            </Link>
             
+            {/* Desktop Navigation */}
             <div className={`hidden md:flex space-x-8 ${isRTL ? 'space-x-reverse' : ''}`}>
-              <Link to="/#features" className="text-white/80 hover:text-white transition-colors">{t.nav.features}</Link>
-              <Link to="/#benefits" className="text-white/80 hover:text-white transition-colors">{t.nav.benefits}</Link>
-              <Link to="/#pricing" className="text-white/80 hover:text-white transition-colors">{t.nav.pricing}</Link>
-              <Link to="/#contact" className="text-white/80 hover:text-white transition-colors">{t.nav.contact}</Link>
-              <Link to="/dashboard" className="text-white/80 hover:text-white transition-colors">{t.nav.dashboard}</Link>
+              <button 
+                onClick={() => scrollToSection('features')}
+                className="text-white/80 hover:text-white transition-colors cursor-pointer"
+              >
+                {t.nav.features}
+              </button>
+              <button 
+                onClick={() => scrollToSection('benefits')}
+                className="text-white/80 hover:text-white transition-colors cursor-pointer"
+              >
+                {t.nav.benefits}
+              </button>
+              <button 
+                onClick={() => scrollToSection('pricing')}
+                className="text-white/80 hover:text-white transition-colors cursor-pointer"
+              >
+                {t.nav.pricing}
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="text-white/80 hover:text-white transition-colors cursor-pointer"
+              >
+                {t.nav.contact}
+              </button>
+              <Link 
+                to="/dashboard" 
+                className="text-white/80 hover:text-white transition-colors"
+              >
+                {t.nav.dashboard}
+              </Link>
             </div>
             
-            <div className={`flex items-center space-x-4 ${isRTL ? 'space-x-reverse' : ''}`}>
+            {/* Right Side Buttons */}
+            <div className={`flex items-center space-x-3 ${isRTL ? 'space-x-reverse' : ''}`}>
+              {/* Language Toggle */}
               <button 
                 onClick={toggleLanguage}
-                className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-3 py-1 rounded-lg hover:bg-white/20 transition-all text-sm"
+                className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-3 py-2 rounded-lg hover:bg-white/20 transition-all text-sm font-medium"
               >
                 {language === 'en' ? 'العربية' : 'English'}
               </button>
-              <button className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-2 rounded-lg hover:shadow-lg transition-all">
+              
+              {/* Demo Button */}
+              <button 
+                onClick={handleDemoClick}
+                className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-2 rounded-lg hover:shadow-lg hover:from-blue-600 hover:to-cyan-600 transform hover:scale-105 transition-all font-medium"
+              >
                 {t.nav.demo}
+              </button>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden text-white p-2"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
               </button>
             </div>
           </div>
+
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden bg-white/10 backdrop-blur-md border-t border-white/20">
+              <div className="px-2 pt-2 pb-3 space-y-1">
+                <button 
+                  onClick={() => scrollToSection('features')}
+                  className="block w-full text-left px-3 py-2 text-white/80 hover:text-white transition-colors"
+                >
+                  {t.nav.features}
+                </button>
+                <button 
+                  onClick={() => scrollToSection('benefits')}
+                  className="block w-full text-left px-3 py-2 text-white/80 hover:text-white transition-colors"
+                >
+                  {t.nav.benefits}
+                </button>
+                <button 
+                  onClick={() => scrollToSection('pricing')}
+                  className="block w-full text-left px-3 py-2 text-white/80 hover:text-white transition-colors"
+                >
+                  {t.nav.pricing}
+                </button>
+                <button 
+                  onClick={() => scrollToSection('contact')}
+                  className="block w-full text-left px-3 py-2 text-white/80 hover:text-white transition-colors"
+                >
+                  {t.nav.contact}
+                </button>
+                <Link 
+                  to="/dashboard" 
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-3 py-2 text-white/80 hover:text-white transition-colors"
+                >
+                  {t.nav.dashboard}
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
       <Routes>
