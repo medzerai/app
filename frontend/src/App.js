@@ -577,6 +577,10 @@ const Dashboard = () => {
       totalHours: 1247,
       panelsAssigned: 150,
       currentPanel: 'Panel A-12-045',
+      cleanedAreas: [
+        { x: 0, y: 0, width: 70, height: 100 },
+        { x: 70, y: 0, width: 30, height: 45 }
+      ],
       specifications: {
         motorSpeed: 1200,
         waterTank: 5.5,
