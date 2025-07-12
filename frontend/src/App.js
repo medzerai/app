@@ -610,6 +610,9 @@ const Dashboard = () => {
       totalHours: 1156,
       panelsAssigned: 140,
       currentPanel: 'Panel B-08-052',
+      cleanedAreas: [
+        { x: 0, y: 0, width: 100, height: 90 }
+      ],
       specifications: {
         motorSpeed: 1200,
         waterTank: 5.5,
@@ -639,6 +642,9 @@ const Dashboard = () => {
       totalHours: 892,
       panelsAssigned: 120,
       currentPanel: 'Charging Station A-05',
+      cleanedAreas: [
+        { x: 0, y: 0, width: 100, height: 100 }
+      ],
       specifications: {
         motorSpeed: 1000,
         waterTank: 4.0,
@@ -668,6 +674,7 @@ const Dashboard = () => {
       totalHours: 756,
       panelsAssigned: 110,
       currentPanel: 'Standby Position',
+      cleanedAreas: [],
       specifications: {
         motorSpeed: 1000,
         waterTank: 4.0,
@@ -697,6 +704,9 @@ const Dashboard = () => {
       totalHours: 2156,
       panelsAssigned: 130,
       currentPanel: 'Maintenance Bay D-03',
+      cleanedAreas: [
+        { x: 0, y: 0, width: 50, height: 90 }
+      ],
       specifications: {
         motorSpeed: 800,
         waterTank: 3.5,
@@ -726,6 +736,10 @@ const Dashboard = () => {
       totalHours: 623,
       panelsAssigned: 160,
       currentPanel: 'Panel B-21-067',
+      cleanedAreas: [
+        { x: 0, y: 0, width: 25, height: 100 },
+        { x: 25, y: 0, width: 15, height: 80 }
+      ],
       specifications: {
         motorSpeed: 1200,
         waterTank: 5.5,
