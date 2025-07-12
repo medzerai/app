@@ -505,6 +505,7 @@ const Navigation = () => {
 
 const Dashboard = () => {
   const { language, t, isRTL } = React.useContext(LanguageContext);
+  const [selectedRobot, setSelectedRobot] = useState(null);
   const [robots, setRobots] = useState([
     {
       id: 'R001',
