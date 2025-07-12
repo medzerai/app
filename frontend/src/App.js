@@ -400,7 +400,11 @@ const translations = {
       celsius: '°م',
       hours: 'ساعة',
       liters: 'لتر',
-      watts: 'واط'
+      watts: 'واط',
+      cleanedArea: 'المنطقة المنظفة',
+      uncleanedArea: 'المنطقة غير المنظفة',
+      cleaningProgress: 'تقدم التنظيف',
+      legend: 'وسيلة الإيضاح'
     }
   }
 };
