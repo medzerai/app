@@ -198,7 +198,10 @@ const translations = {
       celsius: '°C',
       hours: 'hours',
       liters: 'liters',
-      watts: 'watts'
+      cleanedArea: 'Cleaned Area',
+      uncleanedArea: 'Uncleaned Area',
+      cleaningProgress: 'Cleaning Progress',
+      legend: 'Legend'
     }
   },
   ar: {
