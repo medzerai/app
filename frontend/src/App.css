@@ -182,6 +182,30 @@ input:focus, textarea:focus {
   }
 }
 
+/* Cleaning sweep animation */
+@keyframes cleaning-sweep {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(90deg) scale(1);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(135deg) scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(180deg) scale(1);
+    opacity: 1;
+  }
+}
+
 /* Loading states */
 .skeleton {
   background: linear-gradient(90deg, 
