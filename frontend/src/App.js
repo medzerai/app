@@ -632,6 +632,11 @@ const Navigation = () => {
 const Dashboard = () => {
   const { language, t, isRTL } = React.useContext(LanguageContext);
   const [selectedRobot, setSelectedRobot] = useState(null);
+  const [latestTelemetry, setLatestTelemetry] = useState(null);
+  const [telemetryHistory, setTelemetryHistory] = useState([]);
+  const [robotLogs, setRobotLogs] = useState([]);
+  const [commandStatus, setCommandStatus] = useState('');
+  const [loading, setLoading] = useState(false);
   const [robots, setRobots] = useState([
     {
       id: 'R001',
