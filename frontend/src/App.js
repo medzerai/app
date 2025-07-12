@@ -834,6 +834,115 @@ const Dashboard = () => {
     }
   ]);
 
+  // API Functions
+  const fetchLatestTelemetry = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get(`${API}/telemetry/latest`);
+      setLatestTelemetry(response.data);
+      
+      // Update Robot Alpha with real data
+      if (response.data) {
+        setRobots(prevRobots =>
+          prevRobots.map(robot =>
+            robot.id === 'R001'
+              ? {
+                  ...robot,
+                  battery: response.data.battery,
+                  status: response.data.state,
+                  position: {
+                    ...robot.position,
+                    x: response.data.position.lat,
+                    y: response.data.position.lon
+                  },
+                  lastUpdate: new Date(response.data.timestamp)
+                }
+              : robot
+          )
+        );
+      }
+    } catch (error) {
+      console.error('Error fetching telemetry:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const fetchTelemetryHistory = async () => {
+    try {
+      const response = await axios.get(`${API}/telemetry/history?limit=10`);
+      setTelemetryHistory(response.data);
+    } catch (error) {
+      console.error('Error fetching telemetry history:', error);
+    }
+  };
+
+  const fetchRobotLogs = async () => {
+    try {
+      const response = await axios.get(`${API}/logs?limit=20`);
+      setRobotLogs(response.data);
+    } catch (error) {
+      console.error('Error fetching logs:', error);
+    }
+  };
+
+  const sendCommand = async (command) => {
+    try {
+      setLoading(true);
+      const response = await axios.post(`${API}/command`, { command });
+      setCommandStatus(`${t.dashboard.success}: ${t.dashboard.commandSent}`);
+      
+      // Send telemetry update based on command
+      await postTelemetryUpdate(command);
+      
+      setTimeout(() => setCommandStatus(''), 3000);
+    } catch (error) {
+      console.error('Error sending command:', error);
+      setCommandStatus(`${t.dashboard.error}: ${t.dashboard.commandFailed}`);
+      setTimeout(() => setCommandStatus(''), 3000);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const postTelemetryUpdate = async (command) => {
+    try {
+      const robot = robots.find(r => r.id === 'R001');
+      const telemetryData = {
+        timestamp: new Date().toISOString(),
+        position: { lat: robot.position.x, lon: robot.position.y },
+        acceleration: { x: 0.1, y: 0.2, z: 0.9 },
+        angle: { roll: 1.0, pitch: 2.0, yaw: 3.0 },
+        battery: robot.battery,
+        state: command === 'start_cleaning' ? 'cleaning' : 
+               command === 'stop_cleaning' ? 'idle' :
+               command === 'return_to_base' ? 'returning' : 'idle'
+      };
+      
+      await axios.post(`${API}/telemetry`, telemetryData);
+    } catch (error) {
+      console.error('Error posting telemetry:', error);
+    }
+  };
+
+  const postLogEntry = async (message, level = 'info') => {
+    try {
+      const robot = robots.find(r => r.id === 'R001');
+      const logData = {
+        timestamp: new Date().toISOString(),
+        message,
+        level,
+        robot_state: robot.status,
+        battery_level: robot.battery
+      };
+      
+      await axios.post(`${API}/log`, logData);
+      fetchRobotLogs(); // Refresh logs
+    } catch (error) {
+      console.error('Error posting log:', error);
+    }
+  };
+
   const [overallStats, setOverallStats] = useState({
     totalRobots: 6,
     activeRobots: 0,
