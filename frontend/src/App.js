@@ -752,6 +752,7 @@ const Dashboard = () => {
       panelsAssigned: 110,
       currentPanel: 'Standby Position',
       cleanedAreas: [],
+      isConnected: false, // Simulated robot
       specifications: {
         motorSpeed: 1000,
         waterTank: 4.0,
