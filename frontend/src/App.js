@@ -1232,6 +1232,24 @@ const Dashboard = () => {
               <div className="p-6 grid lg:grid-cols-2 gap-8">
                 {/* Left Column - Robot Info */}
                 <div className="space-y-6">
+                  {/* Connection Status */}
+                  {selectedRobot.isConnected && (
+                    <div className="bg-green-500/20 border border-green-500/30 rounded-xl p-4">
+                      <div className={`flex items-center justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
+                        <div className={`flex items-center space-x-2 ${isRTL ? 'space-x-reverse' : ''}`}>
+                          <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                          <span className="text-green-400 font-semibold">{t.dashboard.connectedRobot}</span>
+                        </div>
+                        <span className="text-green-400 text-sm">{t.dashboard.liveData}</span>
+                      </div>
+                      
+                      {commandStatus && (
+                        <div className="mt-2 text-sm text-white/80">
+                          {commandStatus}
+                        </div>
+                      )}
+                    </div>
+                  )}
                   {/* Status and Controls */}
                   <div className={`p-4 rounded-xl ${getStatusBg(selectedRobot.status)}`}>
                     <div className={`flex justify-between items-center mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
