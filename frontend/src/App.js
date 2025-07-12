@@ -970,9 +970,267 @@ const Dashboard = () => {
               >
                 {robot.isOn ? t.dashboard.turnOff : t.dashboard.turnOn}
               </button>
+
+              {/* View Details Button */}
+              <button
+                onClick={() => setSelectedRobot(robot)}
+                className="w-full mt-2 py-2 px-4 rounded-lg font-medium transition-all border-2 border-blue-400/50 text-blue-400 hover:bg-blue-400/10 hover:border-blue-400"
+              >
+                {t.dashboard.robotDetails}
+              </button>
             </div>
           ))}
         </div>
+
+        {/* Robot Details Modal */}
+        {selectedRobot && (
+          <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+            <div className={`bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 max-w-4xl w-full max-h-[90vh] overflow-y-auto ${isRTL ? 'rtl' : 'ltr'}`}>
+              {/* Modal Header */}
+              <div className={`flex justify-between items-center p-6 border-b border-white/20 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <div>
+                  <h2 className="text-2xl font-bold text-white">{selectedRobot.name}</h2>
+                  <p className="text-white/60">{selectedRobot.id} • {selectedRobot.position.sector}</p>
+                </div>
+                <button
+                  onClick={() => setSelectedRobot(null)}
+                  className="text-white/80 hover:text-white p-2 hover:bg-white/10 rounded-lg transition-all"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              <div className="p-6 grid lg:grid-cols-2 gap-8">
+                {/* Left Column - Robot Info */}
+                <div className="space-y-6">
+                  {/* Status and Controls */}
+                  <div className={`p-4 rounded-xl ${getStatusBg(selectedRobot.status)}`}>
+                    <div className={`flex justify-between items-center mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                      <span className={`text-lg font-semibold ${getStatusColor(selectedRobot.status)}`}>
+                        {t.dashboard[selectedRobot.status]}
+                      </span>
+                      <span className="text-white/60 text-sm">
+                        {selectedRobot.lastUpdate.toLocaleString()}
+                      </span>
+                    </div>
+                    
+                    {/* Battery and Cleaning Progress */}
+                    <div className="space-y-3">
+                      <div>
+                        <div className={`flex justify-between text-sm text-white/80 mb-1 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                          <span>{t.dashboard.battery}</span>
+                          <span>{selectedRobot.battery}%</span>
+                        </div>
+                        <div className="w-full bg-white/20 rounded-full h-2">
+                          <div 
+                            className={`h-2 rounded-full transition-all duration-300 ${
+                              selectedRobot.battery > 60 ? 'bg-green-400' :
+                              selectedRobot.battery > 30 ? 'bg-yellow-400' : 'bg-red-400'
+                            }`}
+                            style={{ width: `${selectedRobot.battery}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <div className={`flex justify-between text-sm text-white/80 mb-1 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                          <span>{t.dashboard.cleaningPercentage}</span>
+                          <span>{selectedRobot.cleaningPercentage.toFixed(1)}%</span>
+                        </div>
+                        <div className="w-full bg-white/20 rounded-full h-2">
+                          <div 
+                            className="bg-gradient-to-r from-blue-400 to-cyan-400 h-2 rounded-full transition-all duration-300"
+                            style={{ width: `${selectedRobot.cleaningPercentage}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Basic Info */}
+                  <div className="bg-white/5 rounded-xl p-4">
+                    <h3 className="text-lg font-semibold text-white mb-4">Basic Information</h3>
+                    <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div>
+                        <span className="text-white/60">{t.dashboard.model}:</span>
+                        <p className="text-white font-medium">{selectedRobot.model}</p>
+                      </div>
+                      <div>
+                        <span className="text-white/60">{t.dashboard.serialNumber}:</span>
+                        <p className="text-white font-medium">{selectedRobot.serialNumber}</p>
+                      </div>
+                      <div>
+                        <span className="text-white/60">{t.dashboard.installDate}:</span>
+                        <p className="text-white font-medium">{selectedRobot.installDate}</p>
+                      </div>
+                      <div>
+                        <span className="text-white/60">{t.dashboard.totalHours}:</span>
+                        <p className="text-white font-medium">{selectedRobot.totalHours} {t.dashboard.hours}</p>
+                      </div>
+                      <div>
+                        <span className="text-white/60">{t.dashboard.panelsAssigned}:</span>
+                        <p className="text-white font-medium">{selectedRobot.panelsAssigned}</p>
+                      </div>
+                      <div>
+                        <span className="text-white/60">{t.dashboard.currentPanel}:</span>
+                        <p className="text-white font-medium">{selectedRobot.currentPanel}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Specifications */}
+                  <div className="bg-white/5 rounded-xl p-4">
+                    <h3 className="text-lg font-semibold text-white mb-4">{t.dashboard.specifications}</h3>
+                    <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div>
+                        <span className="text-white/60">{t.dashboard.motorSpeed}:</span>
+                        <p className="text-white font-medium">{selectedRobot.specifications.motorSpeed} {t.dashboard.rpm}</p>
+                      </div>
+                      <div>
+                        <span className="text-white/60">{t.dashboard.waterTank}:</span>
+                        <p className="text-white font-medium">{selectedRobot.specifications.waterTank} {t.dashboard.liters}</p>
+                      </div>
+                      <div>
+                        <span className="text-white/60">{t.dashboard.brushType}:</span>
+                        <p className="text-white font-medium">{t.dashboard.softRotary}</p>
+                      </div>
+                      <div>
+                        <span className="text-white/60">{t.dashboard.powerConsumption}:</span>
+                        <p className="text-white font-medium">{selectedRobot.specifications.powerConsumption} {t.dashboard.watts}</p>
+                      </div>
+                      <div>
+                        <span className="text-white/60">{t.dashboard.maxSpeed}:</span>
+                        <p className="text-white font-medium">{selectedRobot.specifications.maxSpeed} {t.dashboard.kmh}</p>
+                      </div>
+                      <div>
+                        <span className="text-white/60">{t.dashboard.operatingTemp}:</span>
+                        <p className="text-white font-medium">{selectedRobot.specifications.operatingTemp}{t.dashboard.celsius}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Maintenance */}
+                  <div className="bg-white/5 rounded-xl p-4">
+                    <h3 className="text-lg font-semibold text-white mb-4">{t.dashboard.maintenance}</h3>
+                    <div className="space-y-3 text-sm">
+                      <div className={`flex justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
+                        <span className="text-white/60">{t.dashboard.lastMaintenance}:</span>
+                        <span className="text-white font-medium">{selectedRobot.maintenance.lastMaintenance}</span>
+                      </div>
+                      <div className={`flex justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
+                        <span className="text-white/60">{t.dashboard.nextMaintenance}:</span>
+                        <span className="text-white font-medium">{selectedRobot.maintenance.nextMaintenance}</span>
+                      </div>
+                      <div className={`flex justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
+                        <span className="text-white/60">{t.dashboard.warrantyStatus}:</span>
+                        <span className={`font-medium ${selectedRobot.maintenance.warrantyStatus === 'Under Warranty' ? 'text-green-400' : 'text-red-400'}`}>
+                          {selectedRobot.maintenance.warrantyStatus === 'Under Warranty' ? t.dashboard.underWarranty : 'Expired'}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Column - Solar Panel View */}
+                <div className="space-y-6">
+                  {/* Current Solar Panel */}
+                  <div className="bg-white/5 rounded-xl p-4">
+                    <h3 className="text-lg font-semibold text-white mb-4">{t.dashboard.currentPanel}</h3>
+                    <div className="relative">
+                      <img 
+                        src="https://images.unsplash.com/photo-1521618755572-156ae0cdd74d" 
+                        alt="Solar Panel"
+                        className="w-full h-64 object-cover rounded-lg"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-lg"></div>
+                      
+                      {/* Robot Position Indicator */}
+                      {selectedRobot.status !== 'charging' && selectedRobot.status !== 'maintenance' && selectedRobot.status !== 'inactive' && (
+                        <div
+                          className="absolute w-4 h-4 bg-red-500 rounded-full border-2 border-white animate-pulse transform -translate-x-1/2 -translate-y-1/2"
+                          style={{
+                            left: `${selectedRobot.position.panelX}%`,
+                            top: `${selectedRobot.position.panelY}%`
+                          }}
+                        >
+                          <div className="absolute inset-0 bg-red-500 rounded-full animate-ping"></div>
+                        </div>
+                      )}
+                      
+                      {/* Panel Info Overlay */}
+                      <div className="absolute bottom-4 left-4 right-4 bg-black/70 rounded-lg p-3">
+                        <h4 className="text-white font-semibold">{selectedRobot.currentPanel}</h4>
+                        <p className="text-white/80 text-sm">Sector: {selectedRobot.position.sector}</p>
+                        {selectedRobot.status !== 'charging' && selectedRobot.status !== 'maintenance' && selectedRobot.status !== 'inactive' && (
+                          <p className="text-red-400 text-sm">{t.dashboard.robotPosition}</p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Position Details */}
+                  <div className="bg-white/5 rounded-xl p-4">
+                    <h3 className="text-lg font-semibold text-white mb-4">{t.dashboard.position}</h3>
+                    <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div>
+                        <span className="text-white/60">GPS X:</span>
+                        <p className="text-white font-medium">{selectedRobot.position.x}°</p>
+                      </div>
+                      <div>
+                        <span className="text-white/60">GPS Y:</span>
+                        <p className="text-white font-medium">{selectedRobot.position.y}°</p>
+                      </div>
+                      <div>
+                        <span className="text-white/60">Sector:</span>
+                        <p className="text-white font-medium">{selectedRobot.position.sector}</p>
+                      </div>
+                      <div>
+                        <span className="text-white/60">Panel Position:</span>
+                        <p className="text-white font-medium">
+                          {selectedRobot.status !== 'charging' && selectedRobot.status !== 'maintenance' && selectedRobot.status !== 'inactive' 
+                            ? `${selectedRobot.position.panelX}%, ${selectedRobot.position.panelY}%`
+                            : 'N/A'
+                          }
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Control Actions */}
+                  <div className="bg-white/5 rounded-xl p-4">
+                    <h3 className="text-lg font-semibold text-white mb-4">Control Actions</h3>
+                    <div className="space-y-3">
+                      <button
+                        onClick={() => toggleRobot(selectedRobot.id)}
+                        disabled={selectedRobot.status === 'maintenance' || selectedRobot.status === 'charging'}
+                        className={`w-full py-3 px-4 rounded-lg font-semibold transition-all ${
+                          selectedRobot.isOn
+                            ? 'bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white'
+                            : 'bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white'
+                        } ${
+                          selectedRobot.status === 'maintenance' || selectedRobot.status === 'charging'
+                            ? 'opacity-50 cursor-not-allowed'
+                            : 'hover:shadow-lg transform hover:scale-105'
+                        }`}
+                      >
+                        {selectedRobot.isOn ? t.dashboard.turnOff : t.dashboard.turnOn}
+                      </button>
+                      
+                      <button
+                        onClick={() => setSelectedRobot(null)}
+                        className="w-full py-2 px-4 rounded-lg font-medium transition-all border-2 border-white/30 text-white hover:bg-white/10"
+                      >
+                        {t.dashboard.closeDetails}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
