@@ -657,6 +657,7 @@ const Dashboard = () => {
         { x: 0, y: 0, width: 70, height: 100 },
         { x: 70, y: 0, width: 30, height: 45 }
       ],
+      isConnected: true, // This robot is connected to backend
       specifications: {
         motorSpeed: 1200,
         waterTank: 5.5,
