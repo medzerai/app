@@ -565,12 +565,31 @@ const Dashboard = () => {
     {
       id: 'R001',
       name: 'Solar Bot Alpha',
+      model: 'SB-2024 Pro',
+      serialNumber: 'SB001234567',
       status: 'active',
-      position: { x: 45.2, y: 23.8, sector: 'A-12' },
+      position: { x: 45.2, y: 23.8, sector: 'A-12', panelX: 65, panelY: 40 },
       battery: 87,
       cleaningPercentage: 65,
       isOn: true,
-      lastUpdate: new Date()
+      lastUpdate: new Date(),
+      installDate: '2024-01-15',
+      totalHours: 1247,
+      panelsAssigned: 150,
+      currentPanel: 'Panel A-12-045',
+      specifications: {
+        motorSpeed: 1200,
+        waterTank: 5.5,
+        brushType: 'Soft Rotary',
+        powerConsumption: 350,
+        maxSpeed: 2.5,
+        operatingTemp: '45'
+      },
+      maintenance: {
+        lastMaintenance: '2024-11-15',
+        nextMaintenance: '2025-02-15',
+        warrantyStatus: 'Under Warranty'
+      }
     },
     {
       id: 'R002',
