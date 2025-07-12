@@ -1115,7 +1115,16 @@ const Dashboard = () => {
         {/* Robot Control Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {robots.map((robot) => (
-            <div key={robot.id} className={`bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 ${getStatusBg(robot.status)}`}>
+            <div key={robot.id} className={`bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 ${getStatusBg(robot.status)} relative`}>
+              {/* Connection Status Indicator */}
+              {robot.isConnected && (
+                <div className="absolute top-2 right-2">
+                  <div className="flex items-center space-x-1">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-xs text-green-400 font-medium">{t.dashboard.connectedRobot}</span>
+                  </div>
+                </div>
+              )}
               {/* Robot Header */}
               <div className={`flex justify-between items-center mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <div>
