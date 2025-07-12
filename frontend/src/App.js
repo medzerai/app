@@ -594,52 +594,147 @@ const Dashboard = () => {
     {
       id: 'R002',
       name: 'Solar Bot Beta',
+      model: 'SB-2024 Pro',
+      serialNumber: 'SB001234568',
       status: 'cleaning',
-      position: { x: 52.1, y: 31.4, sector: 'B-08' },
+      position: { x: 52.1, y: 31.4, sector: 'B-08', panelX: 35, panelY: 60 },
       battery: 72,
       cleaningPercentage: 89,
       isOn: true,
-      lastUpdate: new Date()
+      lastUpdate: new Date(),
+      installDate: '2024-01-20',
+      totalHours: 1156,
+      panelsAssigned: 140,
+      currentPanel: 'Panel B-08-052',
+      specifications: {
+        motorSpeed: 1200,
+        waterTank: 5.5,
+        brushType: 'Soft Rotary',
+        powerConsumption: 350,
+        maxSpeed: 2.5,
+        operatingTemp: '42'
+      },
+      maintenance: {
+        lastMaintenance: '2024-11-10',
+        nextMaintenance: '2025-02-10',
+        warrantyStatus: 'Under Warranty'
+      }
     },
     {
       id: 'R003',
       name: 'Solar Bot Gamma',
+      model: 'SB-2024 Standard',
+      serialNumber: 'SB001234569',
       status: 'charging',
-      position: { x: 38.7, y: 19.2, sector: 'A-05' },
+      position: { x: 38.7, y: 19.2, sector: 'A-05', panelX: 0, panelY: 0 },
       battery: 23,
       cleaningPercentage: 100,
       isOn: false,
-      lastUpdate: new Date()
+      lastUpdate: new Date(),
+      installDate: '2024-02-01',
+      totalHours: 892,
+      panelsAssigned: 120,
+      currentPanel: 'Charging Station A-05',
+      specifications: {
+        motorSpeed: 1000,
+        waterTank: 4.0,
+        brushType: 'Soft Rotary',
+        powerConsumption: 280,
+        maxSpeed: 2.0,
+        operatingTemp: '0'
+      },
+      maintenance: {
+        lastMaintenance: '2024-10-25',
+        nextMaintenance: '2025-01-25',
+        warrantyStatus: 'Under Warranty'
+      }
     },
     {
       id: 'R004',
       name: 'Solar Bot Delta',
+      model: 'SB-2024 Standard',
+      serialNumber: 'SB001234570',
       status: 'inactive',
-      position: { x: 61.3, y: 42.6, sector: 'C-15' },
+      position: { x: 61.3, y: 42.6, sector: 'C-15', panelX: 0, panelY: 0 },
       battery: 95,
       cleaningPercentage: 0,
       isOn: false,
-      lastUpdate: new Date()
+      lastUpdate: new Date(),
+      installDate: '2024-02-10',
+      totalHours: 756,
+      panelsAssigned: 110,
+      currentPanel: 'Standby Position',
+      specifications: {
+        motorSpeed: 1000,
+        waterTank: 4.0,
+        brushType: 'Soft Rotary',
+        powerConsumption: 280,
+        maxSpeed: 2.0,
+        operatingTemp: '25'
+      },
+      maintenance: {
+        lastMaintenance: '2024-11-01',
+        nextMaintenance: '2025-02-01',
+        warrantyStatus: 'Under Warranty'
+      }
     },
     {
       id: 'R005',
       name: 'Solar Bot Epsilon',
+      model: 'SB-2023 Legacy',
+      serialNumber: 'SB001234571',
       status: 'maintenance',
-      position: { x: 29.8, y: 56.1, sector: 'D-03' },
+      position: { x: 29.8, y: 56.1, sector: 'D-03', panelX: 0, panelY: 0 },
       battery: 0,
       cleaningPercentage: 45,
       isOn: false,
-      lastUpdate: new Date()
+      lastUpdate: new Date(),
+      installDate: '2023-12-15',
+      totalHours: 2156,
+      panelsAssigned: 130,
+      currentPanel: 'Maintenance Bay D-03',
+      specifications: {
+        motorSpeed: 800,
+        waterTank: 3.5,
+        brushType: 'Standard',
+        powerConsumption: 250,
+        maxSpeed: 1.8,
+        operatingTemp: '0'
+      },
+      maintenance: {
+        lastMaintenance: '2024-12-20',
+        nextMaintenance: '2024-12-25',
+        warrantyStatus: 'Expired'
+      }
     },
     {
       id: 'R006',
       name: 'Solar Bot Zeta',
+      model: 'SB-2024 Pro',
+      serialNumber: 'SB001234572',
       status: 'active',
-      position: { x: 67.4, y: 28.9, sector: 'B-21' },
+      position: { x: 67.4, y: 28.9, sector: 'B-21', panelX: 20, panelY: 75 },
       battery: 91,
       cleaningPercentage: 34,
       isOn: true,
-      lastUpdate: new Date()
+      lastUpdate: new Date(),
+      installDate: '2024-03-01',
+      totalHours: 623,
+      panelsAssigned: 160,
+      currentPanel: 'Panel B-21-067',
+      specifications: {
+        motorSpeed: 1200,
+        waterTank: 5.5,
+        brushType: 'Soft Rotary',
+        powerConsumption: 350,
+        maxSpeed: 2.5,
+        operatingTemp: '38'
+      },
+      maintenance: {
+        lastMaintenance: '2024-11-20',
+        nextMaintenance: '2025-02-20',
+        warrantyStatus: 'Under Warranty'
+      }
     }
   ]);
 
