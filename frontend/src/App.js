@@ -866,11 +866,12 @@ const Dashboard = () => {
             {robots.map((robot) => (
               <div
                 key={robot.id}
-                className={`absolute w-4 h-4 rounded-full flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group ${getStatusBg(robot.status)} border`}
+                className={`absolute w-4 h-4 rounded-full flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group ${getStatusBg(robot.status)} border hover:scale-150 transition-all`}
                 style={{
                   left: `${robot.position.x}%`,
                   top: `${robot.position.y}%`
                 }}
+                onClick={() => setSelectedRobot(robot)}
                 title={`${robot.name} - ${robot.position.sector}`}
               >
                 <div className={`w-2 h-2 rounded-full ${robot.isOn ? 'animate-pulse' : ''}`}
