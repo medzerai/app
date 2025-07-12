@@ -951,11 +951,11 @@ const Dashboard = () => {
   });
 
   useEffect(() => {
-    // Simulate real-time updates
+    // Simulate real-time updates for non-connected robots
     const interval = setInterval(() => {
       setRobots(prevRobots => {
         return prevRobots.map(robot => {
-          if (robot.isOn && robot.status === 'cleaning') {
+          if (robot.isOn && robot.status === 'cleaning' && !robot.isConnected) {
             return {
               ...robot,
               cleaningPercentage: Math.min(100, robot.cleaningPercentage + Math.random() * 2),
@@ -968,7 +968,20 @@ const Dashboard = () => {
       });
     }, 3000);
 
-    return () => clearInterval(interval);
+    // Fetch real data for connected robot
+    const fetchInterval = setInterval(() => {
+      fetchLatestTelemetry();
+    }, 5000);
+
+    // Initial data fetch
+    fetchLatestTelemetry();
+    fetchTelemetryHistory();
+    fetchRobotLogs();
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(fetchInterval);
+    };
   }, []);
 
   useEffect(() => {
