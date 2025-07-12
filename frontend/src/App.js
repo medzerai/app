@@ -1169,12 +1169,28 @@ const Dashboard = () => {
                         alt="Solar Panel"
                         className="w-full h-64 object-cover rounded-lg"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-lg"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-lg"></div>
+                      
+                      {/* Cleaned Areas Overlay */}
+                      {selectedRobot.cleanedAreas && selectedRobot.cleanedAreas.map((area, index) => (
+                        <div
+                          key={index}
+                          className="absolute bg-green-400/40 border-2 border-green-400/60 rounded-md"
+                          style={{
+                            left: `${area.x}%`,
+                            top: `${area.y}%`,
+                            width: `${area.width}%`,
+                            height: `${area.height}%`
+                          }}
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-br from-green-400/30 to-green-600/30 rounded-md animate-pulse"></div>
+                        </div>
+                      ))}
                       
                       {/* Robot Position Indicator */}
                       {selectedRobot.status !== 'charging' && selectedRobot.status !== 'maintenance' && selectedRobot.status !== 'inactive' && (
                         <div
-                          className="absolute w-4 h-4 bg-red-500 rounded-full border-2 border-white animate-pulse transform -translate-x-1/2 -translate-y-1/2"
+                          className="absolute w-4 h-4 bg-red-500 rounded-full border-2 border-white animate-pulse transform -translate-x-1/2 -translate-y-1/2 z-10"
                           style={{
                             left: `${selectedRobot.position.panelX}%`,
                             top: `${selectedRobot.position.panelY}%`
@@ -1184,13 +1200,51 @@ const Dashboard = () => {
                         </div>
                       )}
                       
+                      {/* Cleaning Path Indicator */}
+                      {selectedRobot.status === 'cleaning' && (
+                        <div className="absolute inset-0 pointer-events-none">
+                          <div 
+                            className="absolute w-6 h-1 bg-yellow-400/80 rounded-full shadow-lg transform -translate-x-1/2 -translate-y-1/2"
+                            style={{
+                              left: `${selectedRobot.position.panelX}%`,
+                              top: `${selectedRobot.position.panelY}%`,
+                              animation: 'cleaning-sweep 3s ease-in-out infinite'
+                            }}
+                          ></div>
+                        </div>
+                      )}
+                      
                       {/* Panel Info Overlay */}
-                      <div className="absolute bottom-4 left-4 right-4 bg-black/70 rounded-lg p-3">
+                      <div className="absolute bottom-4 left-4 right-4 bg-black/80 rounded-lg p-3">
                         <h4 className="text-white font-semibold">{selectedRobot.currentPanel}</h4>
                         <p className="text-white/80 text-sm">Sector: {selectedRobot.position.sector}</p>
-                        {selectedRobot.status !== 'charging' && selectedRobot.status !== 'maintenance' && selectedRobot.status !== 'inactive' && (
-                          <p className="text-red-400 text-sm">{t.dashboard.robotPosition}</p>
-                        )}
+                        <div className={`flex items-center justify-between mt-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                          <span className="text-green-400 text-sm">{t.dashboard.cleaningProgress}: {selectedRobot.cleaningPercentage.toFixed(1)}%</span>
+                          {selectedRobot.status !== 'charging' && selectedRobot.status !== 'maintenance' && selectedRobot.status !== 'inactive' && (
+                            <span className="text-red-400 text-sm animate-pulse">● {t.dashboard.robotPosition}</span>
+                          )}
+                        </div>
+                      </div>
+                      
+                      {/* Legend */}
+                      <div className="absolute top-4 right-4 bg-black/80 rounded-lg p-3">
+                        <h5 className="text-white text-sm font-semibold mb-2">{t.dashboard.legend}</h5>
+                        <div className="space-y-1 text-xs">
+                          <div className={`flex items-center ${isRTL ? 'flex-row-reverse' : ''}`}>
+                            <div className={`w-3 h-3 bg-green-400/60 border border-green-400 rounded-sm ${isRTL ? 'ml-2' : 'mr-2'}`}></div>
+                            <span className="text-white/80">{t.dashboard.cleanedArea}</span>
+                          </div>
+                          <div className={`flex items-center ${isRTL ? 'flex-row-reverse' : ''}`}>
+                            <div className={`w-3 h-3 bg-gray-400/30 border border-gray-400 rounded-sm ${isRTL ? 'ml-2' : 'mr-2'}`}></div>
+                            <span className="text-white/80">{t.dashboard.uncleanedArea}</span>
+                          </div>
+                          {selectedRobot.status !== 'charging' && selectedRobot.status !== 'maintenance' && selectedRobot.status !== 'inactive' && (
+                            <div className={`flex items-center ${isRTL ? 'flex-row-reverse' : ''}`}>
+                              <div className={`w-3 h-3 bg-red-500 rounded-full ${isRTL ? 'ml-2' : 'mr-2'}`}></div>
+                              <span className="text-white/80">Robot</span>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
